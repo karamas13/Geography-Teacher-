@@ -133,12 +133,12 @@ const App = () => {
   };
 
   return (
-    <div className="App min-h-screen bg-gradient-to-bl from-teal-500 to-sky-700 font-mono">
+    <div className="App min-h-screen bg-gradient-to-bl from-teal-500 to-sky-700 font-mono scrollbar scrollbar-thumb-sky-700 scrollbar-track-sky-300 h-32 overflow-y-scroll">
       <div className="mb-4 flex flex-col sm:flex-row items-center justify-center w-full">
         <img src={logo} alt="Geography Teacher" className="h-24 w-auto" />
         <h1 className="text-3xl lg:text-4xl font-bold text-white mt-4 sm:mt-0">Geography Teacher</h1>
       </div>
-      <div className="h-[42.5em] overflow-y-auto bg-blue-100 p-4 rounded-lg mx-auto w-full max-w-4xl lg:max-w-5xl">
+      <div className="h-[42.5em] overflow-y-auto bg-blue-100 p-4 rounded-lg mx-auto w-full max-w-4xl lg:max-w-5xl scrollbar scrollbar-thumb-sky-700 scrollbar-track-sky-300 h-32 overflow-y-scroll scrollbar-thin">
         {messages.map((message, i) => (
           <div key={i} className={`flex ${message.sender === "ChatGPT" ? 'justify-start' : 'justify-end'} mb-2 items-center`}>
             {message.sender === "ChatGPT" && <img src={avatar1} alt="avatar" className="w-12 h-12 lg:w-16 lg:h-16 rounded-full mr-2" />}
