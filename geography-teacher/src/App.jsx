@@ -65,9 +65,9 @@ const App = () => {
     });
 
     const apiRequestBody = {
-      "model": "gpt-3.5-turbo",
+      "model": "gpt-4o",
       "messages": [
-        { role: "system", content: "You are an artificial intelligence geography teacher and STRICTLY answer questions ONLY related to geography. In the case you are asked something that is not at least remotely related to geography you politely refuse to answer. Lastly when someone says ALLELA or alela respond with LELO" },
+        { role: "system", content: "You are an artificial intelligence geography teacher and STRICTLY answer questions ONLY related to geography. In the case you are asked something that is not at least remotely related to geography you politely refuse to answer." },
         ...apiMessages,
       ],
     };
@@ -133,12 +133,12 @@ const App = () => {
   };
 
   return (
-    <div className="App min-h-screen bg-gradient-to-bl from-teal-500 to-sky-700 font-mono scrollbar scrollbar-thumb-sky-700 scrollbar-track-sky-300 h-32 overflow-y-scroll">
+    <div className="App min-h-screen bg-gradient-to-bl from-teal-500 to-sky-700 font-mono scrollbar scrollbar-thumb-sky-700 scrollbar-track-sky-300 h-32 overflow-y-scroll scrollbar-thin">
       <div className="mb-4 flex flex-col sm:flex-row items-center justify-center w-full">
         <img src={logo} alt="Geography Teacher" className="h-24 w-auto" />
         <h1 className="text-3xl lg:text-4xl font-bold text-white mt-4 sm:mt-0">Geography Teacher</h1>
       </div>
-      <div className="h-[42.5em] overflow-y-auto bg-blue-100 p-4 rounded-lg mx-auto w-full max-w-4xl lg:max-w-5xl scrollbar scrollbar-thumb-sky-700 scrollbar-track-sky-300 h-32 overflow-y-scroll scrollbar-thin">
+      <div className="lg:h-[42.5em] h-[37.5em] overflow-y-auto bg-blue-100 p-4 rounded-lg mx-auto w-full max-w-4xl lg:max-w-5xl scrollbar scrollbar-thumb-sky-700 scrollbar-track-sky-300 h-32 overflow-y-scroll scrollbar-thin">
         {messages.map((message, i) => (
           <div key={i} className={`flex ${message.sender === "ChatGPT" ? 'justify-start' : 'justify-end'} mb-2 items-center`}>
             {message.sender === "ChatGPT" && <img src={avatar1} alt="avatar" className="w-12 h-12 lg:w-16 lg:h-16 rounded-full mr-2" />}
@@ -193,7 +193,7 @@ const App = () => {
             defaultZoom={3}
             defaultCenter={{ lat: 22.54992, lng: 0 }}
             gestureHandling={"greedy"}
-            className='h-[92vh] w-full max-w-4xl lg:max-w-5xl mx-auto'
+            className='h-[92vh] lg:w-full w-[90%] max-w-4xl lg:max-w-5xl mx-auto'
             minZoom={2}
             options={{
               restriction: {
